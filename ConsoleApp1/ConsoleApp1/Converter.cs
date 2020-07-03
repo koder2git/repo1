@@ -1,18 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Diagnostics;
-using System.IO;
+using System.Linq.Expressions;
 using System.Text;
 
 namespace ConsoleApp1
 {
-    public partial class Converter : Component
+    class Converter
     {
         static readonly int[] arabian = { 1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1 };
         static readonly string[] roman = { "M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I" };
 
-        public static void ArabianToRoman(int input)
+        public static string ArabianToRoman(int input)
         {
             int i = 0;
             string str = "";
@@ -25,28 +23,27 @@ namespace ConsoleApp1
                 }
                 else i++;
             }
-            Console.Write("Roman number: ");
-            Console.WriteLine(str);
+            return str;
         }
 
-        public static void RomanToArabian(string input)
+        public static int RomanToArabian(string input)
         {
             int value = 0;
             while (input.Length > 0)
             {
-                foreach (var symb in roman)
+                for (int i = 0; i < roman.Length; i++)
                 {
+                    var symb = roman[i];
                     if (symb.Length > input.Length) continue;
-                    string sub = input.Substring(0, symb.Length);
-                    if (sub == symb)
+                    if (input.Substring(0, symb.Length) == symb)
                     {
-                        value += arabian[Array.IndexOf(roman, symb)];
+                        value += arabian[i];
                         input = input.Substring(symb.Length);
+                        break;
                     }
                 }
             }
-            Console.Write("Arabian number: ");
-            Console.WriteLine(value);
+            return value;
         }
     }
 }
