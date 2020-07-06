@@ -1,6 +1,5 @@
 ﻿using System;
 using System.IO;
-using System.Runtime.CompilerServices;
 using System.Text.RegularExpressions;
 
 namespace ConsoleApp1
@@ -21,7 +20,7 @@ namespace ConsoleApp1
             Console.WriteLine("1) Input from console, output to console");
             Console.WriteLine("2) Input from file, otput to file");
             Console.WriteLine("3) Exit");
-            Console.Write("\r\nSelect an option: ");
+            Console.Write(Environment.NewLine + "Select an option: ");
 
             switch (Console.ReadLine())
             {
@@ -82,30 +81,43 @@ namespace ConsoleApp1
         private static void OutputToFile()
         {
             string line;
-            StreamReader fileIn = new StreamReader(@"C:\Users\pavloa\source\repos\ConsoleApp1\ConsoleApp1\Input.txt");
-            while ((line = fileIn.ReadLine()) != null)
+            using (StreamReader fileIn = new StreamReader(@"C:\Users\pavloa\source\repos\ConsoleApp1\ConsoleApp1\Input.txt"))
             {
-                if (IsSupported(line))
+                while ((line = fileIn.ReadLine()) != null)
                 {
-                    if (int.TryParse(line, out int intValue))
+                    try
                     {
-                        using (StreamWriter fileOut = new StreamWriter(@"C:\Users\pavloa\source\repos\ConsoleApp1\ConsoleApp1\Output.txt", true))
+                        if (IsSupported(line))
                         {
-                            fileOut.WriteLine(Converter.ArabianToRoman(intValue));
-                            fileOut.Close();
+                            if (int.TryParse(line, out int intValue))
+                            {
+                                using StreamWriter fileOut = new StreamWriter(@"C:\Users\pavloa\source\repos\ConsoleApp1\ConsoleApp1\Output.txt", true);
+                                fileOut.WriteLine(Converter.ArabianToRoman(intValue));
+                            }
+                            else
+                            {
+                                using StreamWriter fileOut = new StreamWriter(@"C:\Users\pavloa\source\repos\ConsoleApp1\ConsoleApp1\Output.txt", true);
+                                fileOut.WriteLine(Converter.RomanToArabian(line.ToUpper()));
+                            }
+                        } else
+                        {
+                            using StreamWriter fileOut = new StreamWriter(@"C:\Users\pavloa\source\repos\ConsoleApp1\ConsoleApp1\Output.txt", true);
+                            fileOut.WriteLine("String '" + line + "' is incorrect. Try a correct arabian or roma number.");
+                            throw new Exception("Try a correct arabian or roma number.");
                         }
+                    }                     
+                    catch (FormatException e)
+                    {
+                        Console.WriteLine("Enter a valid number.");
+                        continue;
                     }
-                    else
+                    catch (Exception ex)
                     {
-                        using (StreamWriter fileOut = new StreamWriter(@"C:\Users\pavloa\source\repos\ConsoleApp1\ConsoleApp1\Output.txt", true))
-                        {
-                            fileOut.WriteLine(Converter.RomanToArabian(line.ToUpper()));
-                            fileOut.Close();
-                        }
+                        Console.WriteLine(ex.Message);
+                        continue;
                     }
                 }
             }
-            fileIn.Close();
             Console.WriteLine("Press <Enter> button to finish... ");
             Console.ReadLine();
         }
