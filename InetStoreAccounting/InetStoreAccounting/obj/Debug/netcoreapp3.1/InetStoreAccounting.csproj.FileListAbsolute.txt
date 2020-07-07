@@ -1,0 +1,13 @@
+C:\Users\pavloa\source\repos\InetStoreAccounting\InetStoreAccounting\bin\Debug\netcoreapp3.1\InetStoreAccounting.exe
+C:\Users\pavloa\source\repos\InetStoreAccounting\InetStoreAccounting\bin\Debug\netcoreapp3.1\InetStoreAccounting.deps.json
+C:\Users\pavloa\source\repos\InetStoreAccounting\InetStoreAccounting\bin\Debug\netcoreapp3.1\InetStoreAccounting.runtimeconfig.json
+C:\Users\pavloa\source\repos\InetStoreAccounting\InetStoreAccounting\bin\Debug\netcoreapp3.1\InetStoreAccounting.runtimeconfig.dev.json
+C:\Users\pavloa\source\repos\InetStoreAccounting\InetStoreAccounting\bin\Debug\netcoreapp3.1\InetStoreAccounting.dll
+C:\Users\pavloa\source\repos\InetStoreAccounting\InetStoreAccounting\bin\Debug\netcoreapp3.1\InetStoreAccounting.pdb
+C:\Users\pavloa\source\repos\InetStoreAccounting\InetStoreAccounting\obj\Debug\netcoreapp3.1\InetStoreAccounting.csprojAssemblyReference.cache
+C:\Users\pavloa\source\repos\InetStoreAccounting\InetStoreAccounting\obj\Debug\netcoreapp3.1\InetStoreAccounting.AssemblyInfoInputs.cache
+C:\Users\pavloa\source\repos\InetStoreAccounting\InetStoreAccounting\obj\Debug\netcoreapp3.1\InetStoreAccounting.AssemblyInfo.cs
+C:\Users\pavloa\source\repos\InetStoreAccounting\InetStoreAccounting\obj\Debug\netcoreapp3.1\InetStoreAccounting.csproj.CoreCompileInputs.cache
+C:\Users\pavloa\source\repos\InetStoreAccounting\InetStoreAccounting\obj\Debug\netcoreapp3.1\InetStoreAccounting.dll
+C:\Users\pavloa\source\repos\InetStoreAccounting\InetStoreAccounting\obj\Debug\netcoreapp3.1\InetStoreAccounting.pdb
+C:\Users\pavloa\source\repos\InetStoreAccounting\InetStoreAccounting\obj\Debug\netcoreapp3.1\InetStoreAccounting.genruntimeconfig.cache

@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\pavloa\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\pavloa\\.nuget\\packages"
+    ]
+  }
+}

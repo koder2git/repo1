@@ -6,36 +6,29 @@ namespace InetStoreAccounting
 {
     class Things
     {
+        public string ID { get; }
         public string Name { get; set; }
         public int Amount { get; set; }
         public decimal Price { get; set; }
+    }
 
-        public void Phone(string name, int amount, decimal price)
-        {
-            Name = name;
-            Amount = amount;
-            Price = price;
-        }
+    class Phone : Things
+    {
+     
+    }
 
-        public void Computer(string name, int amount, decimal price)
-        {
-            Name = name;
-            Amount = amount;
-            Price = price;
-        }
+    class Computer : Things
+    {
+        public string Description { get; set; }
+    }
 
-        public void Clothes(string name, int amount, decimal price)
-        {
-            Name = name;
-            Amount = amount;
-            Price = price;
-        }
+    class Clothes : Things
+    {
+        public string Size { get; set; }
+    }
 
-        public void Car(string name, int amount, decimal price)
-        {
-            Name = name;
-            Amount = amount;
-            Price = price;
-        }
+    class Car : Things
+    {
+        public int ProductionYear { get; set; }
     }
 }
