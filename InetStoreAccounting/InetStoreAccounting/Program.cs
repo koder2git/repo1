@@ -10,21 +10,17 @@ namespace InetStoreAccounting
             //Console.WriteLine("Hello World!");
             //Console.WriteLine(things.Name);
             //Console.ReadKey();
-            Car car = new Car();
-            car.Amount = 1;
-            car.Name = "shit";
-            car.Price = 100500.00m;
-            car.ProductionYear = 1982;
+            Car car = new Car("c123", "shit", 1, 100500.00m, 1982);
+            
+            Phone phone = new Phone("f123", "sucks", 10, 100501.01m);
 
-            Phone phone = new Phone();
-            phone.Amount = 10;
-            phone.Name = "sucks";
-            phone.Price = 100501.01m;
 
+            Console.WriteLine($"Phone ID:\t\t{phone.ID}");
             Console.WriteLine($"Phone moder:\t\t{phone.Name}");
             Console.WriteLine($"Amount of phone(s):\t{phone.Amount}");
             Console.WriteLine($"Price $:\t\t{phone.Price}");
             Console.WriteLine();
+            Console.WriteLine($"Car IDr:\t\t{car.ID}");
             Console.WriteLine($"Car moder:\t\t{car.Name}");
             Console.WriteLine($"Year of production:\t{car.ProductionYear}");
             Console.WriteLine($"Amount of car(s):\t{car.Amount}");
