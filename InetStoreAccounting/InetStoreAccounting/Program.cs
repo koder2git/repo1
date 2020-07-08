@@ -7,16 +7,13 @@ namespace InetStoreAccounting
     {
         static void Main(string[] args)
         {
-            //Console.WriteLine("Hello World!");
-            //Console.WriteLine(things.Name);
-            //Console.ReadKey();
-            Car car = new Car("c123", "shit", 1, 100500.00m, 1982);
+            Car car = new Car(Guid.NewGuid(), "shit", 1, 100500.00m, 1982);
 
             List<Phone> phones = new List<Phone>();
-            phones.Add(new Phone("f123", "0sucks", 1, 100501.01m));
-            phones.Add(new Phone("f124", "1sucks", 10, 100502.01m));
-            phones.Add(new Phone("f125", "2sucks", 100, 100503.01m));
-            phones.Add(new Phone("f126", "3sucks", 1000, 100504.01m));
+            phones.Add(new Phone(Guid.NewGuid(), "0sucks", 1, 100501.01m));
+            phones.Add(new Phone(Guid.NewGuid(), "1sucks", 10, 100502.01m));
+            phones.Add(new Phone(Guid.NewGuid(), "2sucks", 100, 100503.01m));
+            phones.Add(new Phone(Guid.NewGuid(), "3sucks", 1000, 100504.01m));
 
             foreach (var phone in phones)
             {
@@ -33,6 +30,8 @@ namespace InetStoreAccounting
             Console.WriteLine($"Year of production:\t{car.ProductionYear}");
             Console.WriteLine($"Amount of car(s):\t{car.Amount}");
             Console.WriteLine($"Price $:\t\t{car.Price}");
+            Console.WriteLine();
+            Console.WriteLine("GUID: " + Guid.NewGuid());
             Console.ReadKey();
         }
     }
