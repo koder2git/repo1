@@ -1,16 +1,13 @@
-﻿using Microsoft.VisualBasic.CompilerServices;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System;
 
 namespace InetStoreAccounting
 {
     public abstract class Things
     {
-        public string ID { get; set; }
-        public string Name { get; set; }
-        public int Amount { get; set; }
-        public decimal Price { get; set; }
+        public string ID { get; private set; }
+        public string Name { get; private set; }
+        public int Amount { get; private set; }
+        public decimal Price { get; private set; }
 
         public Things(string id, string name, int amount, decimal price)
         {
@@ -32,7 +29,7 @@ namespace InetStoreAccounting
 
     class Computer : Things
     {
-        public string Description { get; set; }
+        public string Description { get; private set; }
         public Computer(string id, string name, int amount, decimal price, string description) : base(id, name, amount, price)
         {
             Description = description;
@@ -41,7 +38,7 @@ namespace InetStoreAccounting
 
     class Clothes : Things
     {
-        public string Size { get; set; }
+        public string Size { get; private set; }
         public Clothes(string id, string name, int amount, decimal price, string size) : base(id, name, amount, price)
         {
             Size = size;
@@ -50,7 +47,7 @@ namespace InetStoreAccounting
 
     class Car : Things
     {
-        public int ProductionYear { get; set; }
+        public int ProductionYear { get; private set; }
         public Car(string id, string name, int amount, decimal price, int productionYear) : base(id, name, amount, price)
         {
             ProductionYear = productionYear;
