@@ -26,6 +26,15 @@ namespace InetStoreAccounting
             stor.AddItem(new Computer(Guid.NewGuid(), "shit_comp #", 99, 100500.00m, "PC"));
             stor.AddItem(new Computer(Guid.NewGuid(), "shit_comp $", 99, 100500.00m, "PC"));
 
+
+            Item obj1 = new Car(newGuid, "shit-car0", 1, 100500.00m, 1982);
+            Item obj2 = new Car(newGuid, "shit-car1", 1, 100500.00m, 1982);
+            Item obj3 = new Car(Guid.NewGuid(), "shit-car0", 1, 100500.00m, 1982);
+
+
+            Console.WriteLine(obj1.Equals(obj2));
+            Console.ReadKey();
+
             stor.RemoveItemByGuid(newGuid);
 
             IEnumerable query = from item in stor.GetItemByType(typeof(Car)) where item.Name  == "shit-car2" select item;

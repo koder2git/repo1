@@ -28,6 +28,20 @@ namespace InetStoreAccounting
             Console.WriteLine($"Price $:\t\t{Price}");
             Console.WriteLine($"Total price $:\t\t{Price * Amount}");
         }
+
+        public override bool Equals(object obj)
+        {
+            //return base.Equals(obj);
+            if (obj == null || GetType() != obj.GetType()) return false;
+
+            Item item = (Item)obj;
+            return ID.Equals(item.ID);
+        }
+
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
+        }
     }
 
     public class Phone : Item
