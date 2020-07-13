@@ -29,17 +29,18 @@ namespace InetStoreAccounting
 
         public void RemoveItemByGuid(Guid id)
         {
-            foreach (var item in dict)
+            foreach (var items in dict)
             {
-                foreach (var itm in item.Value)
+                //var result = from item in items.Value
+                //             where item.ID == id
+                //             select item;
+                var result = items.Value.Where(item => item.ID.Equals(id));
+                foreach (var res in result)
                 {
-                    if (itm.ID.Equals(id))
-                    {
-                        itm.Print();
-                        item.Value.Remove(itm);
-                        break;
-                    }
+                    items.Value.Remove(res);
+                    break;
                 }
+                break;
             }
         }
     }

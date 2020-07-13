@@ -28,8 +28,6 @@ namespace InetStoreAccounting
 
             stor.RemoveItemByGuid(newGuid);
 
-            Console.ReadKey();
-
             IEnumerable query = from item in stor.GetItemByType(typeof(Car)) where item.Name  == "shit-car2" select item;
             foreach (Car item in query)
             {
