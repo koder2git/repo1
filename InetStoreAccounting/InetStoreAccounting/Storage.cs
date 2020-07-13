@@ -40,7 +40,6 @@ namespace InetStoreAccounting
                     items.Value.Remove(res);
                     break;
                 }
-                break;
             }
         }
     }
