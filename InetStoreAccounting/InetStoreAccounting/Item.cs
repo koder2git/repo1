@@ -45,8 +45,8 @@ namespace InetStoreAccounting
 
         public override void Print()
         {
-            Console.WriteLine($"Description:\t\t{Description}");
             base.Print();
+            Console.WriteLine($"Description:\t\t{Description}");
         }
     }
 
@@ -60,8 +60,8 @@ namespace InetStoreAccounting
 
         public override void Print()
         {
-            Console.WriteLine($"Size:\t\t{Size}");
             base.Print();
+            Console.WriteLine($"Size:\t\t{Size}");
         }
     }
 
@@ -75,8 +75,8 @@ namespace InetStoreAccounting
 
         public override void Print()
         {
-            Console.WriteLine($"Year of producton:\t{ProductionYear}");
             base.Print();
+            Console.WriteLine($"Year of producton:\t{ProductionYear}");
         }
     }
 }

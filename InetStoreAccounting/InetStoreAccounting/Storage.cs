@@ -10,9 +10,6 @@ namespace InetStoreAccounting
 
         public void AddItem(Item item)
         {
-            //todo
-            //ask if type already added - just add to collection
-            //else add type to collection and create list for items
             if (dict.ContainsKey(item.GetType()))
             {
                 dict[item.GetType()].Add(item);
@@ -28,6 +25,22 @@ namespace InetStoreAccounting
         public IEnumerable<Item> GetItemByType(Type type)
         {
             return dict[type];
+        }
+
+        public void RemoveItemByGuid(Guid id)
+        {
+            foreach (var item in dict)
+            {
+                foreach (var itm in item.Value)
+                {
+                    if (itm.ID.Equals(id))
+                    {
+                        itm.Print();
+                        item.Value.Remove(itm);
+                        break;
+                    }
+                }
+            }
         }
     }
 }
